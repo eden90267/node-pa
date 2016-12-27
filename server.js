@@ -11,7 +11,7 @@ var start = function (route, handlers) {
         console.log('Request for ' + pathname + ' received.');
         console.log('Request url: ' + req.url);
 
-        route(pathname, handlers, url.parse(req.url).query);
+        route(pathname, url.parse(req.url).query, handlers);
 
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.write('Hello World');
